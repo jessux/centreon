@@ -1,0 +1,1594 @@
+{
+	"info": {
+		"_postman_id": "0bf6b161-af69-4b90-a734-1932ddef8872",
+		"name": "Centreon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Configuration",
+			"item": [
+				{
+					"name": "Templates",
+					"item": [
+						{
+							"name": "Get templates",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "6cfc22a8-2458-45d1-b624-651ca3c5af24",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"gettemplate\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set templates",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"settemplate\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};Template1|Template2\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add templates",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"addtemplate\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};Template1|Template2\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete templates",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"deltemplate\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};Template\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Apply template",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"applytpl\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Macro",
+					"item": [
+						{
+							"name": "Get macro",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"getmacro\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set macro",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"setmacro\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};MacroName;NewValue\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete macro",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"delmacro\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};MacroName\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Poller",
+					"item": [
+						{
+							"name": "Set instance poller",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"setinstance\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};Poller-2\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Parameters",
+					"item": [
+						{
+							"name": "Set parameters",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"setparam\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};ParameterToSet;NewParameter\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get parameters",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"getparam\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};ParameterToGet|ParameterToGet\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Parameter \tDescription\r\n2d_coords \t2D coordinates (used by statusmap)\r\n3d_coords \t3D coordinates (used by statusmap)\r\ngeo_coords \tGeo coordinates (used by Centreon MAP)\r\naction_url \tAction URL\r\nactivate \tWhether or not host is enabled\r\nactive_checks_enabled \tWhether or not active checks are enabled\r\nacknowledgement_timeout \tAcknowledgement timeout (in seconds)\r\naddress \tHost IP Address\r\nalias \tAlias\r\ncheck_command \tCheck command\r\ncheck_command_arguments \tCheck command arguments\r\ncheck_interval \tNormal check interval\r\ncheck_freshness \tCheck freshness (in seconds)\r\ncheck_period \tCheck period\r\nchecks_enabled \tWhether or not checks are enabled\r\ncontact_additive_inheritance \tEnables contact additive inheritance\r\ncg_additive_inheritance \tEnables contactgroup additive inheritance\r\nevent_handler \tEvent handler command\r\nevent_handler_arguments \tEvent handler command arguments\r\nevent_handler_enabled \tWhether or not event handler is enabled\r\nfirst_notification_delay \tFirst notification delay (in seconds)\r\nflap_detection_enabled \tWhether or not flap detection is enabled\r\nflap_detection_options \tFlap detection options\r\nicon_image \tIcon image\r\nicon_image_alt \tIcon image text\r\nmax_check_attempts \tMaximum number of attempt before a HARD state is declared\r\nname \tHost name\r\nnotes \tNotes\r\nnotes_url \tNotes URL\r\nnotifications_enabled \tWhether or not notification is enabled\r\nnotification_interval \tNotification interval\r\nnotification_options \tNotification options\r\nnotification_period \tNotification period\r\nobsess_over_host \tWhether or not obsess over host option is enabled\r\npassive_checks_enabled \tWhether or not passive checks are enabled\r\nprocess_perf_data \tProcess performance data command\r\nretain_nonstatus_information \tWhether or not there is non-status retention\r\nretain_status_information \tWhether or not there is status retention\r\nretry_check_interval \tRetry check interval\r\nsnmp_community \tSnmp Community\r\nsnmp_version \tSnmp version\r\nstalking_options \tComma separated options: ‘o’ for OK, ‘d’ for Down, ‘u’ for Unreachable\r\nstatusmap_image \tStatus map image (used by statusmap\r\nhost_notification_options \tNotification options (d,u,r,f,s)\r\ntimezone \tTimezone",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Get token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f00bdd0f-12f7-4f12-a04d-7f0087d6d123",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"    var jsonData = pm.response.json();",
+											"    pm.environment.set(\"token\", jsonData.authToken);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=authenticate",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "authenticate"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Hosts",
+					"item": [
+						{
+							"name": "Add hosts",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"add\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};Alias;IP;Template1|Template2;Poller;HostGroup\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete hosts",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"del\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show hosts",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"show\",\r\n  \"object\": \"host\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Parent",
+					"item": [
+						{
+							"name": "Get parent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"value": "{{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"getparent\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete parent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"delparent\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};Father\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add parent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"addparent\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};Father\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set parent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"setparent\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};Father\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Contact group",
+					"item": [
+						{
+							"name": "Get contact group",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"getcontactgroup\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add contact group",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"addcontactgroup\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};group\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set contact group",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"setcontactgroup\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};group\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete contact group",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"delcontactgroup\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};group\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Contact",
+					"item": [
+						{
+							"name": "Get contact",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"getcontact\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add contact",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"addcontact\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};contact\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set contact",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"setcontact\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};contact\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete contact",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"delcontact\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};contact\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Hostgroup",
+					"item": [
+						{
+							"name": "Get hostgroup",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"gethostgroup\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add hostgroup",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"addhostgroup\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};Hostgroup\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set hostgroup",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"sethostgroup\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};Hostgroup\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete hostgroup",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"delhostgroup\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}};Hostgroup\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Status",
+					"item": [
+						{
+							"name": "Enable",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"enable\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Disable",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "centreon-auth-token",
+										"type": "text",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"disable\",\r\n  \"object\": \"host\",\r\n  \"values\": \"{{host}}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{dns}}/centreon/api/index.php?action=action&object=centreon_clapi",
+									"protocol": "http",
+									"host": [
+										"{{dns}}"
+									],
+									"path": [
+										"centreon",
+										"api",
+										"index.php"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "action"
+										},
+										{
+											"key": "object",
+											"value": "centreon_clapi"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "RealTime",
+			"item": [
+				{
+					"name": "Host",
+					"item": [],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Service",
+					"item": [],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

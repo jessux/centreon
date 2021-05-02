@@ -1,3 +1,3 @@
 # Centreon plugins for personnal use
 
-Check_uptime --> get warning and critical when uptime lower theses values
+_check_uptime_ --> get warning and critical when uptime lower theses values
